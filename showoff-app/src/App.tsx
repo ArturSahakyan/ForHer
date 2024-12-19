@@ -2,6 +2,8 @@ import { ReactNode, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 
+import Rose from "./components/Rose";
+
 function App() {
   const [isHer, setIsHer] = useState(false);
   const [saidNo, setSaidNo] = useState(false);
@@ -11,6 +13,7 @@ function App() {
   if (saidNo) {
     return (
       <>
+      <div style={{ height: "100vh", display: "flex" }}>
         <div className="container">
           <div className="quiz">
             <h1 className="quiz__heading">You're funny -_-</h1>
@@ -22,6 +25,7 @@ function App() {
             </button>
           </div>
         </div>
+          </div>
       </>
     );
   }
@@ -32,7 +36,7 @@ function App() {
         <div style={{ height: "100vh", display: "flex" }}>
           <div className="container">
             <div className="quiz">
-              <h1 className="quiz__heading">Are You Christine?</h1>
+              <h1 className="quiz__heading">Are You NAME?</h1>
               <div className="grid grid--1x2">
                 <button
                   className="button button-primary"
@@ -48,12 +52,7 @@ function App() {
                 </button>
               </div>
             </div>
-            <div>
-              <img
-                src={"./src/assets/rose-growing" + roseIndex + ".png"}
-                className="rose"
-              />
-            </div>
+            <Rose size={roseIndex} />
           </div>
         </div>
       </>
