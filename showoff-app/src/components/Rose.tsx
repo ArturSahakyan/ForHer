@@ -4,7 +4,7 @@ function Rose({size}: {size: number}) {
    return (
     <div>
         <img src={`./src/assets/rose-growing${size}.png`} 
-        className="rose"
+        className="rose right-img"
         alt="Rose" />
     </div>
    ); 
