@@ -1,15 +1,28 @@
 import {ReactNode, useState} from "react";
 
-function IsHer() {
-    const [isHer, setIsHer] = useState(false);
+import OBResponse from "./OBResponse";
+
+function IsHer({passQ}: {passQ:()=>void}) {
     const [saidNo, setSaidNo] = useState(false);
+
+  if (saidNo) {
+    return (
+      <>
+        <OBResponse 
+            onOkay={()=>setSaidNo(false)} 
+            prompt={"You're Funny -_-"}
+            btnStr={"Sorryyy"}
+        />
+      </>
+    );
+  }
 
    return (<div className="quiz">
      <h1 className="quiz__heading">Are You NAME?</h1>
      <div className="grid grid--1x2">
        <button
          className="button button-primary"
-         onClick={() => setIsHer(true)}
+         onClick={() => passQ()}
        >
          Yes
        </button>

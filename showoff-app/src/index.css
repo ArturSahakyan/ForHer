@@ -25,23 +25,25 @@ html, body {
 }
 
 .container {
-  width: 75vw;
-  height: 50vh;
-  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 
-  display: grid;
-  grid-template-columns: 75vw 25vw;
-  grid-template-rows: 1fr;
-  justify-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   justify-self: center;
   align-self: center;
 }
 
 .quiz {
-  width: 75%;
-  height: 75%;
-
-  align-self: center;
+  max-width: 90%;
+  max-height: 90%;
+  padding: 2rem;
+  padding-left: 7rem;
+  padding-right: 7rem;
+  margin-bottom: 2rem;
 
   background-color: #325434;
   border-radius: 1rem;
@@ -49,8 +51,9 @@ html, body {
 
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  flex-grow: 1;
 }
 
 .quiz__heading {
@@ -59,12 +62,21 @@ html, body {
 
 .grid {
   display: grid;
+  padding-bottom: 3rem;
 }
 
 .grid--1x2 {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 5rem;
+}
+
+.grid--2x2 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    width: 100%;
+    height: auto;
 }
 
 .button {
@@ -114,6 +126,7 @@ html, body {
 }
 
 .right-img {
+    flex-shrink: 0;
     width: 30rem;
     height: 30rem;
     padding-right: 4rem;
@@ -125,4 +138,18 @@ html, body {
 
 .rose {
   image-rendering: pixelated;
+}
+
+.img-choice {
+    width: 100%;
+    height: 100%;
+    image-rendering: auto;
+    image-rendering: crisp-edge;
+    object-fit: contain;
+
+    background: rgb(70, 155, 70);
+}
+
+.img-choice:hover {
+    background: rgb(50, 105, 50);
 }

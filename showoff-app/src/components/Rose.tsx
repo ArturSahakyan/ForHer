@@ -5,6 +5,7 @@ function Rose({size}: {size: number}) {
     <div>
         <img src={`./src/assets/rose-growing${size}.png`} 
         className="rose right-img"
+        onClick={()=> console.log("clicked rose")}
         alt="Rose" />
     </div>
    ); 
