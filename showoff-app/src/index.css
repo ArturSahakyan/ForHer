@@ -95,6 +95,14 @@ html, body {
   background: #0099ff;
 }
 
+.button-pink {
+    background: #ff8080;
+}
+
+.button-pink:hover {
+    background: #ff4d4d;
+}
+
 .button-correct {
   background-color: #287e29;
 }
