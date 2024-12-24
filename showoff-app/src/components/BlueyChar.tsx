@@ -1,7 +1,19 @@
 import { ReactNode, useState} from "react";
 
+import OBResponse from "./OBResponse";
 
 function BlueyChar({passQ}: {passQ: ()=>void}) {
+    const [failed, setFailed] = useState(false);
+
+    if (failed) {
+        return (
+            <OBResponse 
+                onOkay={()=>{setFailed(false)}}
+                prompt="NO...I Like The Chocolate Chip Ones..."
+                btnStr="ohhhhhhhh"
+            />
+        );
+    }
 
    return (
    <div className="quiz">
@@ -10,25 +22,25 @@ function BlueyChar({passQ}: {passQ: ()=>void}) {
        <img
          src="./src/assets/Bluey.webp"
          className="img-choice"
-         onClick={() => passQ()}
+         onClick={() => setFailed(true)}
        />
        
        <img
          src="./src/assets/Bingo.webp"
          className="img-choice"
-         onClick={() => passQ()}
+         onClick={() => setFailed(true)}
        />
 
        <img
          src="./src/assets/Chili.webp"
          className="img-choice"
-         onClick={() => passQ()}
+         onClick={() => setFailed(true)}
        />
 
        <img
          src="./src/assets/Muffin.webp"
          className="img-choice"
-         onClick={() => {}}
+         onClick={() => {passQ()}}
        />
      </div>
    </div>);
