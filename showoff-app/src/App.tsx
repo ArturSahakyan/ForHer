@@ -24,7 +24,11 @@ function App() {
     <>
             <div className="container">
                <CurrentQuestion passQ={nextQuestion} /> 
-               <Rose size={roseIndex} />
+               {
+                (roseIndex != 6)
+                    ? <Rose size={roseIndex} />
+                    : <div style={{display:"block", width: "100%", height: "100%"}}></div> 
+               }
             </div>
     </>
   );

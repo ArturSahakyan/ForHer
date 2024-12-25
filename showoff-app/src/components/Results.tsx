@@ -6,6 +6,7 @@ function Results( {passQ}:{passQ:()=>void} ) {
         <h1 className="quiz__heading">Congrats! You're A Match!</h1>
         <h1 className="quiz__heading"> You Got <strong style={{color:"red"}}>0</strong> Wrong </h1>
         <h1 className="quiz__heading"> </h1>
+        <img className="final-rose" src="./src/assets/rose-growing6.png" />
         <button
               className="button button-primary"
               onClick={passQ}
