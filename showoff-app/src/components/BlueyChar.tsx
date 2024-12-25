@@ -4,6 +4,7 @@ import OBResponse from "./OBResponse";
 
 function BlueyChar({passQ}: {passQ: ()=>void}) {
     const [failed, setFailed] = useState(false);
+    const [correct, setCorrect] = useState(false);
 
     if (failed) {
         return (
@@ -11,6 +12,16 @@ function BlueyChar({passQ}: {passQ: ()=>void}) {
                 onOkay={()=>{setFailed(false)}}
                 prompt="NO...I Like The Chocolate Chip Ones..."
                 btnStr="ohhhhhhhh"
+            />
+        );
+    }
+
+    if (correct) {
+     return(
+            <OBResponse 
+                onOkay={passQ}
+                prompt="Yeah! Muffin :D"
+                btnStr="Cute :)"
             />
         );
     }
@@ -40,7 +51,7 @@ function BlueyChar({passQ}: {passQ: ()=>void}) {
        <img
          src="./src/assets/Muffin.webp"
          className="img-choice"
-         onClick={() => {passQ()}}
+         onClick={() => setCorrect(true)}
        />
      </div>
    </div>);

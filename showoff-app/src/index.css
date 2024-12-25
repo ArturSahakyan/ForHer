@@ -1,74 +1,78 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #23272a;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #23272a;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden; /* Prevent scrollbars */
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* Prevent scrollbars */
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .container {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  justify-self: center;
-  align-self: center;
+    justify-self: center;
+    align-self: center;
 }
 
 .quiz {
-  max-width: 90%;
-  max-height: 90%;
-  padding: 2rem;
-  padding-left: 7rem;
-  padding-right: 7rem;
-  margin-bottom: 2rem;
+    max-width: 95%;
+    max-height: 95%;
+    padding: 2rem;
+    padding-left: 7rem;
+    padding-right: 7rem;
+    margin-bottom: 2rem;
 
-  background-color: #325434;
-  border-radius: 1rem;
-  box-shadow: 15px 15px 10px 10px #333;
+    background-color: #325434;
+    border-radius: 1rem;
+    box-shadow: 15px 15px 10px 10px #333;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
 }
 
 .quiz__heading {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 .grid {
-  display: grid;
-  padding-bottom: 3rem;
+    display: grid;
+    padding-bottom: 3rem;
 }
 
 .grid--1x2 {
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 5rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 5rem;
+    width: 100%;
+    height: auto;
 }
 
 .grid--2x2 {
@@ -80,19 +84,19 @@ html, body {
 }
 
 .button {
-  width: 20vw;
-  height: 5rem;
-  border: 0;
+    width: 20vw;
+    height: 5rem;
+    border: 0;
 
-  font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .button-primary {
-  background: #0066ff;
+    background: #0066ff;
 }
 
 .button-primary:hover {
-  background: #0099ff;
+    background: #0099ff;
 }
 
 .button-pink {
@@ -104,33 +108,33 @@ html, body {
 }
 
 .button-correct {
-  background-color: #287e29;
+    background-color: #287e29;
 }
 
 .button-correct:hover {
-  background-color: #4f804f;
+    background-color: #4f804f;
 }
 
 .button-wrong {
-  background: #b22828;
+    background: #b22828;
 }
 
 .button-wrong:hover {
-  background: #b84343;
+    background: #b84343;
 }
 
 @media screen and (min-width: 900px) {
-  .quiz__heading {
-    font-size: 3rem;
-  }
+    .quiz__heading {
+        font-size: 3rem;
+    }
 
-  .button {
-    width: 12vw;
-  }
+    .button {
+        width: 12vw;
+    }
 
-  .container {
-    width: 50vw;
-  }
+    .container {
+        width: 50vw;
+    }
 }
 
 .right-img {
@@ -145,7 +149,7 @@ html, body {
 }
 
 .rose {
-  image-rendering: pixelated;
+    image-rendering: pixelated;
 }
 
 .img-choice {
@@ -156,8 +160,28 @@ html, body {
     object-fit: contain;
 
     background: rgb(70, 155, 70);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .img-choice:hover {
     background: rgb(50, 105, 50);
+}
+
+.img-choice img {
+    width: 85%;
+    height: 85%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.input {
+    height: 4rem;
+    margin: 5rem;
+    margin-bottom: 8rem;
+    width: 10%;
+    font-size: 2rem;
+    text-align: center; 
 }
