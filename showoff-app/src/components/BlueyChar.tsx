@@ -1,6 +1,7 @@
 import { ReactNode, useState} from "react";
 
 import OBResponse from "./OBResponse";
+import user_data from "../tools/data";
 
 function BlueyChar({passQ}: {passQ: ()=>void}) {
     const [failed, setFailed] = useState(false);
@@ -26,6 +27,13 @@ function BlueyChar({passQ}: {passQ: ()=>void}) {
         );
     }
 
+    const assignFirst = (name) => {
+        if (user_data.ogChar != "")
+            return;
+
+        user_data.ogChar = name;
+    }
+
    return (
    <div className="quiz">
      <h1 className="quiz__heading">Who is My Favorite Bluey Character</h1>
@@ -33,25 +41,25 @@ function BlueyChar({passQ}: {passQ: ()=>void}) {
        <img
          src="./src/assets/Bluey.webp"
          className="img-choice"
-         onClick={() => setFailed(true)}
+         onClick={() => {setFailed(true); assignFirst("Bluey")}}
        />
        
        <img
          src="./src/assets/Bingo.webp"
          className="img-choice"
-         onClick={() => setFailed(true)}
+         onClick={() => {setFailed(true); assignFirst("Bingo")}}
        />
 
        <img
          src="./src/assets/Chili.webp"
          className="img-choice"
-         onClick={() => setFailed(true)}
+         onClick={() => {setFailed(true); assignFirst("Chili")}}
        />
 
        <img
          src="./src/assets/Muffin.webp"
          className="img-choice"
-         onClick={() => setCorrect(true)}
+         onClick={() => {setCorrect(true); assignFirst("Muffin")}}
        />
      </div>
    </div>);

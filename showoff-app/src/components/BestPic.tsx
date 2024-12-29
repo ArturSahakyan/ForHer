@@ -1,7 +1,7 @@
 import { ReactNode, useState } from "react";
 
-
 import OBResponse from "./OBResponse";
+import user_data from "../tools/data";
 
 function BestPic( {passQ}:{passQ:()=>void} ) {
     const [chosen, setChosen] = useState(0);
@@ -15,6 +15,7 @@ function BestPic( {passQ}:{passQ:()=>void} ) {
     };
 
     if (next == max_pics) {
+        user_data.favPic = chosen;
         return (
             <OBResponse
                 onOkay={passQ}

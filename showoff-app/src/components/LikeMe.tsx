@@ -1,6 +1,7 @@
 import {ReactNode, useState} from "react";
 
 import OBResponse from "./OBResponse";
+import user_data from "../tools/data";
 
 function LikeMe({passQ}: {passQ:()=>void}) {
     const [position, setPosition] = useState({top: "50%", left: "50%"});
@@ -13,6 +14,8 @@ function LikeMe({passQ}: {passQ:()=>void}) {
         setPosition({ top: `${randomTop}px`, left: `${randomLeft}px` });
         setTPClicked(true);
         setTPCount(tpCount+1);
+
+        user_data.noClicks += 1;
     };
 
     // Tried pressing "No" Too Much

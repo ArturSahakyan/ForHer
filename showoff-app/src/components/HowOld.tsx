@@ -1,6 +1,7 @@
 import { ReactNode, useState } from "react";
 
 import OBResponse from "./OBResponse";
+import user_data from "../tools/data";
 
 function HowOld({ passQ }: { passQ: () => void }) {
     const [age, setAge] = useState(0);
@@ -12,6 +13,9 @@ function HowOld({ passQ }: { passQ: () => void }) {
             setCorrect(true);
         else
             setWrong(true);
+
+        if (user_data.ogAge == -1)
+            user_data.ogAge = age;
     }
     
     if (correct) {
