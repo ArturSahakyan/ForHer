@@ -18,7 +18,7 @@ function IsHer({passQ}: {passQ:()=>void}) {
   }
 
    return (<div className="quiz">
-     <h1 className="quiz__heading">Are You Joy?</h1>
+     <h1 className="quiz__heading">Are You NAME?</h1>
      <div className="grid grid--1x2">
        <button
          className="button button-primary"
